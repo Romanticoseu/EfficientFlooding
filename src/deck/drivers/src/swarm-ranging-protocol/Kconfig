@@ -1,0 +1,14 @@
+config SWARM_RANGING_PROTOCOL
+    bool "Enable basic swarm ranging protocol"
+    default y
+    help
+      The swarm ranging protocol provide the ranging service
+      which obtain the distance between each couple drones.
+
+config SWARM_FLOODING
+    bool "Enable swarm flooding"
+    depends on SWARM_RANGING_PROTOCOL
+    default y
+    help
+      The swarm flooding transmit the distance message with flooding
+      method.

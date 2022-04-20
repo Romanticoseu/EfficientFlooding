@@ -1,0 +1,30 @@
+{
+    "files.associations": {
+        "mac.h": "c",
+        "log.h": "c",
+        "freertos.h": "c",
+        "task.h": "c",
+        "olsrstruct.h": "c",
+        "rangingprotocolstruct.h": "c",
+        "adhoconboardsim.h": "c",
+        "libdw1000.h": "c",
+        "string.h": "c",
+        "semphr.h": "c",
+        "rangingprotocoltask.h": "c",
+        "rangingprotocolpacket.h": "c",
+        "adhocdeck.h": "c",
+        "rangingprotocolalgo.h": "c",
+        "*.tcc": "c",
+        "unordered_map": "c",
+        "fstream": "c",
+        "istream": "c",
+        "numeric": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "lpstdoa3tag.h": "c",
+        "lpstwrtag.h": "c",
+        "stm32fxxx.h": "c",
+        "stm32f4xx.h": "c",
+        "floodingalgo.h": "c"
+    }
+}

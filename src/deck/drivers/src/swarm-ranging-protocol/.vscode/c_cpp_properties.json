@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/bitcraze/crazyflie-firmware/**",
+                "/home/bitcraze/crazyflie-firmware/src/modules/interface",
+                "${workspaceFolder}/interface",
+                "/home/bitcraze/crazyflie-firmware/src/deck/drivers/interface",
+                "/home/bitcraze/crazyflie-firmware/vendor/FreeRTOS/include",
+                "/home/bitcraze/crazyflie-firmware/src/lib/STM32F4xx_StdPeriph_Driver/inc/**",
+                "/home/bitcraze/crazyflie-firmware/src/config"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
