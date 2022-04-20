@@ -12,6 +12,9 @@ typedef struct
     uint16_t sequence;
     uint16_t size;
     uint8_t timeToLive;
+    uint8_t red;
+    uint8_t green;
+    uint8_t blue;
 } __attribute__((packed)) fMessageHeader_t; // 7 bytes
 
 typedef struct

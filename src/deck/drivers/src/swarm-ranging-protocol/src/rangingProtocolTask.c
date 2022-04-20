@@ -164,22 +164,22 @@ void TsTask(void *ptr)
 
 // F task
 #ifdef CONFIG_SWARM_FLOODING
-void FTask(void *ptr)
-{
-    MAC80215_PACKET_INIT(txFPacket, MAC802154_TYPE_F);
-    // task loop
-    while (true)
-    {
-        xSemaphoreTake(globalSetLock, portMAX_DELAY);
-        // critical section
-        GenerateF(myAddress, &txFPacket, 3);
-        DEBUG_PRINT_TASK("START SEND F\n");
-        xQueueSend(globalSendQueue, &txFPacket, portMAX_DELAY);
-        //
-        xSemaphoreGive(globalSetLock);
-        vTaskDelay(M2T(F_INTERVAL));
-    }
-}
+// void FTask(void *ptr)
+// {
+//     MAC80215_PACKET_INIT(txFPacket, MAC802154_TYPE_F);
+//     // task loop
+//     while (true)
+//     {
+//         xSemaphoreTake(globalSetLock, portMAX_DELAY);
+//         // critical section
+//         GenerateF(myAddress, &txFPacket, 3);
+//         DEBUG_PRINT_TASK("START SEND F\n");
+//         xQueueSend(globalSendQueue, &txFPacket, portMAX_DELAY);
+//         //
+//         xSemaphoreGive(globalSetLock);
+//         vTaskDelay(M2T(F_INTERVAL));
+//     }
+// }
 
 // R task
 void RTask(void *ptr)

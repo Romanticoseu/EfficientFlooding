@@ -10,7 +10,9 @@
 
 static int fMessageSeq = 0;
 static int fMessageTopologySeq = 0;
-
+ uint8_t rx_red;
+ uint8_t rx_green;
+ uint8_t rx_blue;
 void GenerateF(uint16_t myAddress, packet_t *txFPacket, uint8_t timeToLive)
 {
     //DEBUG_PRINT_ALGO("START GENERATE F\n");
@@ -133,6 +135,9 @@ void UpdateRxF(const message_t* message)
     //DEBUG_PRINT_ALGO("START UPDATE RX F\n");
     // 泛洪消息解析，提取负载部分
     fMessageHeader_t *fMessageHeader = (fMessageHeader_t *) message->messagePayload;
+    rx_red = fMessageHeader->red;
+    rx_green = fMessageHeader->green;
+    rx_blue = fMessageHeader->blue; 
     uint8_t *fMessagePayloadStart = (uint8_t *) message->messagePayload + sizeof(fMessageHeader_t);
     uint8_t *fMessagePayloadEnd = (uint8_t *) message->messagePayload + fMessageHeader->size;
     // 报文负载数据提取

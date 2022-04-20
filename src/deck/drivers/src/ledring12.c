@@ -55,7 +55,9 @@
 #ifndef LEDRING_TIME_MEM_SIZE
 #define LEDRING_TIME_MEM_SIZE 10
 #endif
-
+extern uint8_t rx_red;
+extern uint8_t rx_green;
+extern uint8_t rx_blue;
 typedef struct __attribute__((packed)) timing {
   uint8_t duration;       // How long this color should be show in parts of 1/25s. So 25 will show the color 1s, before going to the next color.
   uint8_t color[2];       // What color should be shown in RGB565 format.
@@ -139,7 +141,7 @@ typedef void (*Ledring12Effect)(uint8_t buffer[][3], bool reset);
   dest[2] = ((uint16_t)B5 * 527 + 23) >> 6;
 
 #ifndef LEDRING_DEFAULT_EFFECT
-#define LEDRING_DEFAULT_EFFECT 6
+#define LEDRING_DEFAULT_EFFECT 7
 #endif
 
 #define LEDRING_TIME_MEM_SEC 1000 / 25
@@ -264,9 +266,9 @@ static void solidColorEffect(uint8_t buffer[][3], bool reset)
 
   for (i=0; i<NBR_LEDS; i++)
   {
-    buffer[i][0] = solidRed*brightness;
-    buffer[i][1] = solidGreen*brightness;
-    buffer[i][2] = solidBlue*brightness;
+    buffer[i][0] = rx_red;
+    buffer[i][1] = rx_green;
+    buffer[i][2] = rx_blue;
   }
 }
 

@@ -27,17 +27,17 @@ static void TsTaskInit()
 }
 
 #ifdef CONFIG_SWARM_FLOODING
-static void FTaskInit()
-{
-    if(xTaskCreate(FTask, "F_TASK", MINIMAL_STACK_SIZE, NULL, LPS_DECK_TASK_PRI, NULL) == pdPASS)
-    {
-        DEBUG_PRINT_INIT("F TASK INIT SUCCESS\n");
-    }
-    else
-    {
-        DEBUG_PRINT_INIT("F TASK INIT FAILED\n");
-    }
-}
+// static void FTaskInit()
+// {
+//     if(xTaskCreate(FTask, "F_TASK", MINIMAL_STACK_SIZE, NULL, LPS_DECK_TASK_PRI, NULL) == pdPASS)
+//     {
+//         DEBUG_PRINT_INIT("F TASK INIT SUCCESS\n");
+//     }
+//     else
+//     {
+//         DEBUG_PRINT_INIT("F TASK INIT FAILED\n");
+//     }
+// }
 
 static void RTaskInit()
 {
@@ -84,7 +84,7 @@ static void TaskInit(dwDevice_t *dev)
 
     TsTaskInit();
     #ifdef CONFIG_SWARM_FLOODING
-    FTaskInit();
+    // FTaskInit();
     RTaskInit();
     #endif
 }
